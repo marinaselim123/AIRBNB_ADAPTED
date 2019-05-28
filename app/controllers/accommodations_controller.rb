@@ -11,7 +11,7 @@ class AccommodationsController < ApplicationController
   def show
   end
 
-  def my_reservation
+  def my_accommodation
   end
 
   def accepted
