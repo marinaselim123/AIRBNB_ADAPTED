@@ -1,28 +1,28 @@
 class AccommodationsController < ApplicationController
   def index
-    @accomodations = Accomodation.all
+    @accommodations = Accommodation.all
   end
 
   def create
-    @accomodation = Accomodation.new(accomodation_params)
-
-    if @accomodation.save
-      redirect_to accomodation_path
+    @accommodation = Accommodation.new(accommodation_params)
+    if @accommodation.save
+      redirect_to accommodation_path
     else
       render :new
     end
   end
 
   def new
-    @accomodation = Accomodation.new
+
+    @accommodation = Accommodation.new
   end
 
   def show
-    @accomodation = Accomodation.find(params[:id])
+    @accommodation = Accommodation.find(params[:id])
   end
 
-  def my_reservation
-    @accomodation
+  def my_accommodation
+
   end
 
   def accepted
@@ -33,8 +33,8 @@ class AccommodationsController < ApplicationController
 
   private
 
-  def accomodation_params
-    params.require(:accomodation).permit(:type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :image)
 
+  def accommodation_params
+    params.require(:accommodation).permit(:type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :image)
   end
 end
