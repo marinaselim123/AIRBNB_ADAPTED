@@ -1,2 +1,5 @@
-<h1>Accommodations#new</h1>
-<p>Find me in app/views/accommodations/new.html.erb</p>
+<h1>Add an accommodation</h1>
+
+<%= render 'form', accommodation: @accommodation %>
+
+<%= link_to 'Back', accommodations_path %>

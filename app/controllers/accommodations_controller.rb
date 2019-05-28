@@ -4,9 +4,10 @@ class AccommodationsController < ApplicationController
   end
 
   def create
-    @accommodation = Accommodation.new(accommodation_params)
+    @accommodation = current_user.accommodations.build(accommodation_params)
+
     if @accommodation.save
-      redirect_to accommodation_path
+      redirect_to accommodation_path(@accommodation)
     else
       render :new
     end
@@ -35,6 +36,6 @@ class AccommodationsController < ApplicationController
 
 
   def accommodation_params
-    params.require(:accommodation).permit(:type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :image)
+    params.require(:accommodation).permit(:accommodation_type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :image)
   end
 end
