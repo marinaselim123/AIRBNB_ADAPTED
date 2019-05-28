@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :accommodations, only:[:index, :new, :create, :show, :my_accommodation] do
-    resources :reservations, only: [:index, :new, :create, :show, :my_reservation]
+    resources :reservations, only: [:new, :create, :show, :my_reservation]
   end
   devise_for :users
-
+  resources :reservations, only: [:index]
   root to: 'pages#home'
 
   # get "/accommodations", to: "accommodations#index"
