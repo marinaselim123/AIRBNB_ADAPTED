@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-=======
+
+
 
   resources :accommodations do
     resources :reservations, only: [:index, :new, :create, :show, :my_accommodation]
   end
   devise_for :users
->>>>>>> ec76bfe223ace5ed155b23ba283250bc46bc43cf
+
   root to: 'pages#home'
 
   # get "/accommodations", to: "accommodations#index"
