@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+
+  resources :accommodations do
+    resources :reservations, only: [:index, :new, :create, :show, :my_accommodation]
+  end
+  devise_for :users
+>>>>>>> ec76bfe223ace5ed155b23ba283250bc46bc43cf
   root to: 'pages#home'
-  resources :accommodations
+
   # get "/accommodations", to: "accommodations#index"
   # post "/accommodations", to: "accommodations#create"
   # get "/accommodation/new", to: "accommodations#new"
@@ -13,7 +21,7 @@ Rails.application.routes.draw do
   # get 'reservations/new'
   # get 'reservations/show'
   # get 'reservations/my_accommodation'
-  devise_for :users
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
