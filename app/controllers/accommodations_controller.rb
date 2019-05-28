@@ -17,7 +17,7 @@ class AccommodationsController < ApplicationController
   end
 
   def show
-    @accommodation = Cocktail.find(params[:id])
+    @accommodation = Accommodation.find(params[:id])
   end
 
   def my_accommodation
@@ -32,6 +32,6 @@ class AccommodationsController < ApplicationController
   private
 
   def accommodation_params
-    params.require(:cocktail).permit(:type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :image)
+    params.require(:accommodation).permit(:type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :image)
   end
 end
