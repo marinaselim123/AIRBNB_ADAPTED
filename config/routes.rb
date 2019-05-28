@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources: accommodations do
-    resources :reservations; only: [:index, :new, :create, :show, :my_accommodation]
+  resources :accommodations do
+    resources :reservations, only: [:index, :new, :create, :show, :my_accommodation]
   end
   devise_for :users
   root to: 'pages#home'
