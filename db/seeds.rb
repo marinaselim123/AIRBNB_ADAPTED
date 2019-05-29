@@ -5,6 +5,44 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Accommodation.create!( guest_number: 3, rooms_number: 5, beds_number: 6, toilet_number: 5, address: "hdjhrjugr",user: User.last, price_per_night: 56, accommodation_type: "flat")
+puts "Cleaning DB..."
+Reservation.destroy_all
+Accommodation.destroy_all
+User.destroy_all
 
-Reservation.create!(arrival_date: DateTime.parse("08/09/2019"), departure_date: DateTime.parse("23/09/2019"), user: User.last, guest_number: 3, total_price: 45, accommodation: Accommodation.last, status: "pending" )
+puts "Creating users..."
+
+toto = User.create!(
+  first_name: 'Toto',
+  last_name: 'Titi',
+  address: '20 rue de Rome, Marseille',
+  email: 'toto@gmail.com',
+  password: 'password'
+)
+
+User.create!(
+  first_name: 'Titi',
+  last_name: 'Toto',
+  address: '22 rue de Rome, Marseille',
+  email: 'titi@gmail.com',
+  password: 'password'
+)
+
+puts "Creating accommodations..."
+
+
+10.times do
+  Accommodation.create!(
+    user: toto,
+    guest_number: rand(1..4),
+    rooms_number: rand(1..5),
+    beds_number: rand(1..4),
+    toilet_number: rand(1..4),
+    address: "167 rue Paradis, Marseille",
+    price_per_night: rand(20..100),
+    accommodation_type: "flat"
+  )
+end
+
+
+# Reservation.create!(arrival_date: DateTime.parse("08/09/2019"), departure_date: DateTime.parse("23/09/2019"), user: User.last, guest_number: 3, total_price: 45, accommodation: Accommodation.last, status: "pending" )
