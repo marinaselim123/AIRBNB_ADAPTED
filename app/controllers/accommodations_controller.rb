@@ -14,7 +14,6 @@ class AccommodationsController < ApplicationController
   end
 
   def new
-
     @accommodation = Accommodation.new
   end
 
@@ -23,7 +22,6 @@ class AccommodationsController < ApplicationController
   end
 
   def my_accommodation
-
   end
 
   def accepted

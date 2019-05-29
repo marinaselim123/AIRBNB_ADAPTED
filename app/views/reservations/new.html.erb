@@ -1,2 +1,9 @@
 <h1>Reservations#new</h1>
 <p>Find me in app/views/reservations/new.html.erb</p>
+
+<%= simple_form_for [@accommodation, @reservation] do |f| %>
+<%= f.input :arrival_date %>
+<%= f.input :departure_date %>
+<%= f.input :guest_number %>
+<%= f.submit "Add reservation" %>
+<% end %>
