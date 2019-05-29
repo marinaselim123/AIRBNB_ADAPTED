@@ -14,7 +14,7 @@
     <h5 class="card-title">Reservation 1</h5>
     <p class="card-text">Your next trip starts on <%= reservation.arrival_date %> to <%= reservation.departure_date %> </p>
 
-   <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-primary" %>
+   <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
   </div>
 </div>
 
