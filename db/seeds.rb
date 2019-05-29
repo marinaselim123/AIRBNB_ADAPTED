@@ -31,7 +31,7 @@ User.create!(
 puts "Creating accommodations..."
 
 
-10.times do
+2.times do
   Accommodation.create!(
     user: toto,
     guest_number: rand(1..4),
@@ -40,9 +40,34 @@ puts "Creating accommodations..."
     toilet_number: rand(1..4),
     address: "167 rue Paradis, Marseille",
     price_per_night: rand(20..100),
-    accommodation_type: "flat"
+    accommodation_type: "Flat in the city center"
   )
 end
+3.times do
+   Accommodation.create!(
+    user: toto,
+    guest_number: rand(1..4),
+    rooms_number: rand(1..5),
+    beds_number: rand(1..4),
+    toilet_number: rand(1..4),
+    address: "12 allée marcel leclerc, Marseille",
+    price_per_night: rand(20..100),
+    accommodation_type: "Studio behind the stadium"
+  )
 
+end
+2.times do
+   Accommodation.create!(
+    user: toto,
+    guest_number: rand(1..4),
+    rooms_number: rand(1..5),
+    beds_number: rand(1..4),
+    toilet_number: rand(1..4),
+    address: "25 boulevard garoutte, Marseille",
+    price_per_night: rand(20..100),
+    accommodation_type: "Cozy apartment in the center"
+  )
+
+end
 
 # Reservation.create!(arrival_date: DateTime.parse("08/09/2019"), departure_date: DateTime.parse("23/09/2019"), user: User.last, guest_number: 3, total_price: 45, accommodation: Accommodation.last, status: "pending" )

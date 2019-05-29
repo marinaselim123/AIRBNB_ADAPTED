@@ -1,6 +1,14 @@
 class AccommodationsController < ApplicationController
   def index
-    @accommodations = Accommodation.all
+
+     @accommodations = Accommodation.where.not(latitude: nil, longitude: nil)
+
+    @markers = @accommodations.map do |accommodation|
+      {
+        lat: accommodation.latitude,
+        lng: accommodation.longitude
+      }
+    end
   end
 
   def create
