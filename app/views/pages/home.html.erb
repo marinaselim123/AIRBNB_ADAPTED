@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <h1>Welcome <%=current_user.first_name%>,</h1>
       <p>Travel around the world and enjoy unique experiences with locals.</p>
-      <a class="btn btn-flat" href="#"><strong>Check My Reservations</strong></a>
+      <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
     <% else %>
       <h1>Welcome,</h1>
       <p>Travel around the world and enjoy unique experiences with locals.</p>
