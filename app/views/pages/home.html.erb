@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1433838552652-f9a46b332c40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+  <div class="centered-title-banner">
+    <% if user_signed_in? %>
+      <h1>Welcome <%=current_user.first_name%>,</h1>
+      <p>Travel around the world and enjoy unique experiences with locals.</p>
+    <% else %>
+      <h1>Welcome,</h1>
+      <p>Travel around the world and enjoy unique experiences with locals.</p>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</div>
