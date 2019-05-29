@@ -1,0 +1,21 @@
+<div class="container">
+
+<div class="card-trip">
+  <img class="card-img-top" src="https://source.unsplash.com/user/erondu/1600x900
+" alt="Card image cap">
+  <div class="card-trip-infos">
+    <div>
+      <h2><strong><%= @accommodation.accommodation_type %></strong></h2>
+      <p>This <%= @accommodation.accommodation_type %> is ideally located in <%= @accommodation.address %>. Fully equipped for your comfort and elegantly decorated!</p>
+      <p> <strong>Address</strong> <%= @accommodation.address %></p>
+      <p> <%= @accommodation.guest_number %> guest number</p>
+      <p> <%= @accommodation.rooms_number %> rooms number</p>
+      <p> <%= @accommodation.beds_number %> beds number</p>
+      <p> <%= @accommodation.toilet_number %> toilet number</p>
+    </div>
+    <h4 class="card-trip-pricing"><%= @accommodation.price_per_night %> € per night</h4>
+  </div>
+</div>
+
+
+</div>
