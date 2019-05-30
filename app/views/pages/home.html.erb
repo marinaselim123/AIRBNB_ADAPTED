@@ -1,38 +1,28 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1433838552652-f9a46b332c40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
   <div class="centered-title-banner">
     <% if user_signed_in? %>
-      <h1>Welcome <%=current_user.first_name%>,</h1>
-      <p>Travel around the world and enjoy unique experiences with locals.</p>
-      <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
+    <h1>Welcome <%=current_user.first_name%>,</h1>
+    <p>Travel around the world and enjoy unique experiences with locals.</p>
+    <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
     <% else %>
-      <h1>Welcome,</h1>
-      <p>Travel around the world and enjoy unique experiences with locals.</p>
-      <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
+    <h1>Welcome,</h1>
+    <p>Travel around the world and enjoy unique experiences with locals.</p>
+    <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
     <% end %>
   </div>
 </div>
-
-
 <div class="cards-container">
   <div class="card">
-  <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
-    <h3>Flat in the heart of the city </h3>
-  </div>
+    <% @home_accommodations.each do |accommodation|  %>
+    <div class="card-product">
+      <img src="https://source.unsplash.com/user/erondu/1600x900">
+      <div class="card-product-infos">
+        <h2><%=  accommodation.accommodation_type %></h2>
+        <p><strong><%= accommodation.price_per_night %></strong> $ per night.</p>
+        <%= link_to 'See More', accommodation_path(accommodation), class: "btn btn-red"%>
+      </div>
+    </div>
 
-  <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
-        <h3> Sunny studio in Paris </h3>
-  </div>
-
-  <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
-    <h3> Pleasant room  </h3>
+    <%end%>
   </div>
 </div>
-
-
-
-
-  </div>
-
-
-
-
