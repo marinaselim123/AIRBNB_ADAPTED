@@ -3,12 +3,15 @@
     <% if user_signed_in? %>
     <h1>Welcome <%=current_user.first_name%>,</h1>
     <p>Travel around the world and enjoy unique experiences with locals.</p>
-    <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
     <% else %>
     <h1>Welcome,</h1>
     <p>Travel around the world and enjoy unique experiences with locals.</p>
-    <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
     <% end %>
+  </div>
+  <div class = "container width-auto">
+
+  <%= render 'accommodations/searchform', accommodation: @accommodation %>
+
   </div>
 </div>
 <div class="cards-container">
