@@ -3,6 +3,29 @@
     <% if user_signed_in? %>
     <h1>Welcome <%=current_user.first_name%>,</h1>
     <p>Travel around the world and enjoy unique experiences with locals.</p>
+    <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
+    <% else %>
+    <h1>Welcome,</h1>
+    <p>Travel around the world and enjoy unique experiences with locals.</p>
+    <%= link_to "See Appartments", accommodations_path, class: 'btn btn-flat' %>
+    <% end %>
+  </div>
+</div>
+<div class="cards-container">
+  <div class="card">
+    <% @home_accommodations.each do |accommodation|  %>
+    <div class="card-product">
+      <img src="https://source.unsplash.com/user/erondu/1600x900">
+      <div class="card-product-infos">
+        <h2><%=  accommodation.accommodation_type %></h2>
+        <p><strong><%= accommodation.price_per_night %></strong> $ per night.</p>
+        <%= link_to 'See More', accommodation_path(accommodation), class: "btn btn-red"%>
+      </div>
+    </div>
+
+    <%end%>
+  </div>
+</div>
     <% else %>
     <h1>Welcome,</h1>
     <p>Travel around the world and enjoy unique experiences with locals.</p>
@@ -28,3 +51,4 @@
     </div>
   </div>
 </div>
+
