@@ -5,21 +5,23 @@ class ReservationsController < ApplicationController
     @reservations = current_user.reservations
   end
 
-  def create
-    @accommodation = Accommodation.find(params[:accommodation_id])
-    @reservation = current_user.reservations.build(reservation_params)
-    @reservation = Reservation.new(reservation_params)
-    @reservation.accommodation = @accommodation
-    @reservation.total_price = (@reservation.departure_date - @reservation.arrival_date) * @accommodation.price_per_night
-    @reservation.user = current_user
-    @reservation.status = "pending"
-    if @reservation.save
-      redirect_to reservations_path
-    else
-      raise
-      render :new
-    end
-  end
+
+    def create
+      @accommodation = Accommodation.find(params[:accommodation_id])
+       @reservation = current_user.reservations.build(reservation_params)
+       # @reservation = Reservation.new(reservation_params)
+       @reservation.accommodation = @accommodation
+
+       @reservation.total_price = (@reservation.departure_date - @reservation.arrival_date) * @accommodation.price_per_night
+       # @reservation.user = current_user
+       # @reservation.status = "pending"
+       if @reservation.save
+         redirect_to root_path
+       else
+         render :new
+       end
+     end
+
 
   def new
     @accommodation = Accommodation.find(params[:accommodation_id])
