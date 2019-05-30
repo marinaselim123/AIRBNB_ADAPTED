@@ -1,6 +1,6 @@
 
-<h2> All my reservations </h2>
 
+<h1>All my Reservations</h1>
 
 <% @reservations.each do |reservation| %>
 
@@ -16,9 +16,6 @@ https://source.unsplash.com/user/erondu/1600x900
 
    <h5 class="card-title">Reservation 1</h5>
    <p class="card-text">Your next trip starts on <%= reservation.arrival_date %> to <%= reservation.departure_date %> </p>
-    <p class="card-text">Arrival date <%= reservation.arrival_date %></p>
-    <p class="card-text">Departure date <%= reservation.departure_date %></p>
-    <p class="card-text">Guest number <%= reservation.guest_number %></p>
 
   <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
  </div>
@@ -26,3 +23,5 @@ https://source.unsplash.com/user/erondu/1600x900
 
 
 <%end%>
+
+
