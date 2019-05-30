@@ -18,7 +18,7 @@
   <div class="card">
     <% @home_accommodations.each do |accommodation|  %>
     <div class="card-product">
-      <img src="https://source.unsplash.com/user/erondu/1600x900">
+      <%= cl_image_tag accommodation.photo, height: 300, width: 400, crop: :fill %>
       <div class="card-product-infos">
         <h2><%=  accommodation.accommodation_type %></h2>
         <p><strong><%= accommodation.price_per_night %></strong> $ per night.</p>

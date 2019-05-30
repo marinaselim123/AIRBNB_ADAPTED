@@ -30,8 +30,19 @@ User.create!(
 
 puts "Creating accommodations..."
 
+Accommodation.create!(
+    user: toto,
+    guest_number: rand(1..4),
+    rooms_number: rand(1..5),
+    beds_number: rand(1..4),
+    toilet_number: rand(1..4),
+    address: "167 rue Paradis, Marseille",
+    price_per_night: rand(20..100),
+    accommodation_type: "Loft with panorama",
+    remote_photo_url: "https://odis.homeaway.com/odis/listing/fcf8f760-1bb2-4862-b678-bdc79ba1202f.c10.jpg"
+  )
 
-2.times do
+
   Accommodation.create!(
     user: toto,
     guest_number: rand(1..4),
@@ -40,10 +51,10 @@ puts "Creating accommodations..."
     toilet_number: rand(1..4),
     address: "167 rue Paradis, Marseille",
     price_per_night: rand(20..100),
-    accommodation_type: "Flat in the city center"
+    accommodation_type: "Flat in the city center",
+    remote_photo_url: "https://odis.homeaway.com/odis/listing/766d0e42-50a6-4745-8ff1-0ca5f7ce6210.c10.jpg"
   )
-end
-3.times do
+
    Accommodation.create!(
     user: toto,
     guest_number: rand(1..4),
@@ -52,11 +63,11 @@ end
     toilet_number: rand(1..4),
     address: "12 allée marcel leclerc, Marseille",
     price_per_night: rand(20..100),
-    accommodation_type: "Studio behind the stadium"
+    accommodation_type: "Studio behind the stadium",
+    remote_photo_url: "https://lesjours.fr/ressources/image/ep2-velodrome-img-header.jpeg"
   )
 
-end
-2.times do
+
    Accommodation.create!(
     user: toto,
     guest_number: rand(1..4),
@@ -65,10 +76,10 @@ end
     toilet_number: rand(1..4),
     address: "25 boulevard garoutte, Marseille",
     price_per_night: rand(20..100),
-    accommodation_type: "Cozy apartment in the center"
+    accommodation_type: "Flat at Le Vieux Port",
+    remote_photo_url: "https://www.artcom.fr/img/projets/normal/appart2.jpg"
   )
 
-end
 
 Accommodation.create!(
     user: toto,
@@ -78,7 +89,8 @@ Accommodation.create!(
     toilet_number: rand(1..4),
     address: "Tour Eiffel, Paris",
     price_per_night: rand(20..100),
-    accommodation_type: "Cozy apartment in the center"
+    accommodation_type: "Cozy apartment in the center",
+    remote_photo_url: "https://madeinmarseille.net/actualites-marseille/fontaine-place-castellane-tourisme-marseille.jpg"
     )
 
 
