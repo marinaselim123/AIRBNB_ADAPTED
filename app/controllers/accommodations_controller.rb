@@ -1,7 +1,14 @@
 class AccommodationsController < ApplicationController
   def index
 
-     @accommodations = Accommodation.where.not(latitude: nil, longitude: nil)
+    if params[:address].present?
+      @accommodations = Accommodation.near(params[:address], 10)
+      if params[:guest_number].present?
+        @accommodations = @accommodations.where(guest_number: params[:guest_number])
+      end
+    else
+      @accommodations = Accommodation.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @accommodations.map do |accommodation|
       {
