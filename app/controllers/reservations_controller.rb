@@ -1,17 +1,19 @@
 class ReservationsController < ApplicationController
  # before_action :set_booking, only: [:mark_as_accepted, :mark_as_rejected]
   def index
-    @reservations = current_user.reservations
+    @reservations = Reservation.all
   end
 
   def create
     @accommodation = Accommodation.find(params[:accommodation_id])
     @reservation = Reservation.new(reservation_params)
-  #  @reservation.user = current_user
-  #  @reservation.status = "pending"
+    @reservation.accommodation = @accommodation
+    @reservation.user = current_user
+    @reservation.status = "pending"
     if @reservation.save
       redirect_to reservations_path
     else
+      raise
       render :new
     end
   end
