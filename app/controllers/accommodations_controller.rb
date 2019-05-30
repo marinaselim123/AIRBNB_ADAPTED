@@ -36,7 +36,8 @@ class AccommodationsController < ApplicationController
     @accommodation = Accommodation.find(params[:id])
   end
 
-  def my_accommodation
+  def my_accommodations
+    @accommodations = current_user.accommodations
   end
 
   def accepted
