@@ -2,6 +2,8 @@
 <h3 class ="page-title"> <strong> Your upcoming Trips </strong></h3>
 
 
+<h1>All my Reservations</h1>
+
 <% @reservations.each do |reservation| %>
 
 
@@ -20,6 +22,8 @@
       <div class="but-menu">
           <%= image_tag("dropdown.png") %>
 
+   <h5 class="card-title">Reservation 1</h5>
+   <p class="card-text">Your next trip starts on <%= reservation.arrival_date %> to <%= reservation.departure_date %> </p>
 
       </div>
 
@@ -48,3 +52,5 @@
 
 </div>
 <%end%>
+
+
