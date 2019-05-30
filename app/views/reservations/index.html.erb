@@ -1,25 +1,28 @@
-<h1>All my Reservations</h1>
+
+<h2> All my reservations </h2>
+
 
 <% @reservations.each do |reservation| %>
 
 
 
+ <div class="card" style="width: 18rem;">
+   <img class="card-img-top" src="https://source.unsplash.com/user/erondu/1600x900
+https://source.unsplash.com/user/erondu/1600x900
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://source.unsplash.com/user/erondu/1600x900
 " alt="Card image cap">
 
-  <div class="card-body">
+ <div class="card-body">
 
-    <h5 class="card-title">Reservation 1</h5>
-    <p class="card-text">Your next trip starts on <%= reservation.arrival_date %> to <%= reservation.departure_date %> </p>
+   <h5 class="card-title">Reservation 1</h5>
+   <p class="card-text">Your next trip starts on <%= reservation.arrival_date %> to <%= reservation.departure_date %> </p>
+    <p class="card-text">Arrival date <%= reservation.arrival_date %></p>
+    <p class="card-text">Departure date <%= reservation.departure_date %></p>
+    <p class="card-text">Guest number <%= reservation.guest_number %></p>
 
-   <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
-  </div>
+  <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
+ </div>
 </div>
 
 
-
 <%end%>
-
-
