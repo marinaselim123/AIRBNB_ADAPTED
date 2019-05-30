@@ -11,7 +11,7 @@
         <p> <%= @accommodation.beds_number %> beds number</p>
         <p> <%= @accommodation.toilet_number %> toilet number</p>
       <h4 class="card-trip-pricing"><%= @accommodation.price_per_night %> €/night</h4>
-      <%= link_to 'Make a reservation', root_path, class: "btn btn-red reservation" %>
+      <%= link_to 'Make a reservation', new_accommodation_reservation_path(@accommodation), class: "btn btn-red reservation" %>
       </div>
     </div>
   </div>
