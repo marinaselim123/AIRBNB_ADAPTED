@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
-  resources :accommodations, only:[:index, :new, :create, :show, :my_accommodation] do
-    resources :reservations, only: [:new, :create, :show, :my_reservation]
+  resources :accommodations, only:[:index, :new, :create, :show] do
+    collection do
+      get :my_accommodations
+    end
+    resources :reservations, only: [:new, :create, :show,]
   end
+
   devise_for :users
-  resources :reservations, only: [:index, :new, :create]
+
+  resources :reservations, only: [:index, :new, :create] do
+    collection do
+      get :my_reservation
+    end
+
+    member do
+      patch :accept
+      patch :decline
+    end
+  end
+
   root to: 'pages#home'
 
 
