@@ -36,7 +36,8 @@ class AccommodationsController < ApplicationController
     @accommodation = Accommodation.find(params[:id])
   end
 
-  def my_accommodation
+  def my_accommodations
+    @accommodations = current_user.accommodations
   end
 
   def accepted
@@ -49,6 +50,6 @@ class AccommodationsController < ApplicationController
 
 
   def accommodation_params
-    params.require(:accommodation).permit(:accommodation_type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :image)
+    params.require(:accommodation).permit(:accommodation_type, :guest_number, :rooms_number, :beds_number, :toilet_number, :address, :price_per_night, :photo)
   end
 end

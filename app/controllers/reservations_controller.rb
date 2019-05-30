@@ -1,8 +1,10 @@
 class ReservationsController < ApplicationController
- # before_action :set_booking, only: [:mark_as_accepted, :mark_as_rejected]
+  before_action :set_reservation, only: [:accept, :decline]
+
   def index
-    @reservations = Reservation.all
+    @reservations = current_user.reservations
   end
+
 
     def create
       @accommodation = Accommodation.find(params[:accommodation_id])
@@ -20,6 +22,7 @@ class ReservationsController < ApplicationController
        end
      end
 
+
   def new
     @accommodation = Accommodation.find(params[:accommodation_id])
     @reservation = Reservation.new
@@ -30,20 +33,26 @@ class ReservationsController < ApplicationController
   end
 
   def my_reservation
-    current_user.reservation
+    @reservations = current_user.owner_reservations
   end
 
-#  def mark_as_accepted
-#    @reservation.status = "accepted"
-#    @reservation.save
-#  end
+  def accept
+    @reservation.status = "accepted"
+    @reservation.save
+    redirect_to my_reservation_reservations_path
+  end
 
-#  def mark_as_rejected
-#    @reservation.status = "rejected"
-#    @reservation.save
-#  end
+  def decline
+    @reservation.status = "rejected"
+    @reservation.save
+    redirect_to my_reservation_reservations_path
+  end
 
   private
+
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
 
   def reservation_params
     params.require(:reservation).permit(:arrival_date, :departure_date, :guest_number, :accommodation_id)
