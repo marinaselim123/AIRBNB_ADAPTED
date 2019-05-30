@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card-trip">
-    <img class="card-img-top" src="https://source.unsplash.com/user/erondu/1600x900" alt="Card image cap">
+    <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
     <div class="card-trip-infos">
       <div>
         <h3><strong><%= @accommodation.accommodation_type %></strong></h3>
