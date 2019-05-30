@@ -5,13 +5,16 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @accommodation = Accommodation.find(params[:accommodation_id])
-    @reservation = Reservation.new(reservation_params)
-  #  @reservation.user = current_user
+    @accommodation = Accommodation.find(params[:accommodation_id].to_i)
+    @reservation = Reservation.new
+    @reservation.accommodation = @accommodation
+    @reservation.user = current_user
+
   #  @reservation.status = "pending"
     if @reservation.save
       redirect_to reservations_path
     else
+      raise
       render :new
     end
   end
