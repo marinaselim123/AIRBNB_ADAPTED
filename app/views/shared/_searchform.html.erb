@@ -1,0 +1,19 @@
+<%= form_tag accommodations_path, class: "form-search", method: :get do %>
+<ul>
+  <li><strong>WHERE</strong><br>
+    <%= text_field_tag :address,
+    params[:address],
+    placeholder: "Italy",
+    class:"entry-zone"
+    %>
+  </li>
+  <li><strong>TRAVELLERS</strong><br>
+    <%= number_field_tag :guest_number,
+    params[:guest_number],
+    placeholder: "1 traveller",
+    class:"entry-zone"
+    %>
+  </li>
+</ul>
+<%= submit_tag "Search", class: 'btn btn-search' %>
+<% end %>
