@@ -1,3 +1,18 @@
-<h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
-<%= link_to "Create a reservation" ,new_accommodation_reservation_path %>
+<h4 class="title-confirmation">Thank you for your booking!!!</h4>
+
+
+<div class="main-container">
+
+  <div class="card_one">
+    <p><strong><%= @reservation.accommodation.accommodation_type %></strong></p>
+
+
+    <p><strong>Arrival date and check-in time:<%= @reservation.arrival_date %></strong></p>
+     <p><strong>Departure date and check-out time:<%= @reservation.departure_date %></strong></p>
+  </div>
+
+ <div class="card_two">
+  <p><strong>Total price:<%= @reservation.total_price %></strong></p>
+</div>
+
+</div>

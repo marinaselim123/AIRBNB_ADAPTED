@@ -85,6 +85,6 @@ Accommodation.create!(
 # Reservation.create!(arrival_date: DateTime.parse("08/09/2019"), departure_date: DateTime.parse("23/09/2019"), user: User.last, guest_number: 3, total_price: 45, accommodation: Accommodation.last, status: "pending" )
 
 Reservation.create!(arrival_date: DateTime.parse("08/09/2019"), departure_date: DateTime.parse("23/09/2019"), user: User.last, guest_number: 3, total_price: 45, accommodation: Accommodation.last, status: "pending" )
-Reservation.create!(arrival_date: DateTime.parse("08/03/2020"), departure_date: DateTime.parse("23/04/2020"), user: User.last, guest_number: 2, total_price: 50, accommodation: Accommodation.last, status: "pending" )
+Reservation.create!(arrival_date: DateTime.parse("08/03/2020"), departure_date: DateTime.parse("23/04/2020"), user: User.last, guest_number: 2, total_price: 50, accommodation: Accommodation.first, status: "pending" )
 
 
