@@ -26,3 +26,29 @@
     <%end%>
   </div>
 </div>
+    <% else %>
+    <h1>Welcome,</h1>
+    <p>Travel around the world and enjoy unique experiences with locals.</p>
+    <% end %>
+  </div>
+  <div class = "container width-auto">
+
+  <%= render 'accommodations/searchform', accommodation: @accommodation %>
+
+  </div>
+</div>
+
+<div class="cards-container">
+  <div class="card">
+    <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
+      <h3>Flat in the heart of the city </h3>
+    </div>
+    <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
+      <h3> Sunny studio in Paris </h3>
+    </div>
+    <div class="cards-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/user/erondu/1600x900)">
+      <h3> Pleasant room  </h3>
+    </div>
+  </div>
+</div>
+

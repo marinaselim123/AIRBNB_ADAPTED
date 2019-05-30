@@ -1,25 +1,56 @@
+
+<h3 class ="page-title"> <strong> Your upcoming Trips </strong></h3>
+
+
 <h1>All my Reservations</h1>
 
 <% @reservations.each do |reservation| %>
 
 
+<div class="reservation-card">
+     <img  src="https://source.unsplash.com/user/erondu/1600x900">
+
+      <div class="reservation-card-infos">
+
+        <ul class="list-reservation">
+          <li> <h2><%= reservation.accommodation.accommodation_type %></h2></li>
+          <li><%= reservation.arrival_date %></li>
+          <li><%= reservation.departure_date %></li>
+        </ul>
+         </div>
+
+      <div class="but-menu">
+          <%= image_tag("dropdown.png") %>
+
+   <h5 class="card-title">Reservation 1</h5>
+   <p class="card-text">Your next trip starts on <%= reservation.arrival_date %> to <%= reservation.departure_date %> </p>
+
+      </div>
+
+       <!--  <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn"></button>
+          <div id="myDropdown" class="dropdown-content">
+
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+             <!-- <p class="card-text">Guest number <%= reservation.guest_number %></p> -->
+
+          </div> -->
+        </div>
+        <!--
+        <h5 class="reservation-card-title"><%= reservation.accommodation.accommodation_type %></h5>
+ -->
 
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://source.unsplash.com/user/erondu/1600x900
-" alt="Card image cap">
 
-  <div class="card-body">
+  <!--
 
-    <h5 class="card-title">Reservation 1</h5>
-    <p class="card-text">Your next trip starts on <%= reservation.arrival_date %> to <%= reservation.departure_date %> </p>
+  <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %> -->
 
-   <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
-  </div>
+
+
 </div>
-
-
-
 <%end%>
 
 
