@@ -1,8 +1,10 @@
 class AccommodationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
 
     if params[:address].present?
-      @accommodations = Accommodation.near(params[:address], 10)
+      @accommodations = Accommodation.near(params[:address])
+
       if params[:guest_number].present?
         @accommodations = @accommodations.where(guest_number: params[:guest_number])
       end
@@ -22,7 +24,7 @@ class AccommodationsController < ApplicationController
     @accommodation = current_user.accommodations.build(accommodation_params)
 
     if @accommodation.save
-      redirect_to accommodation_path(@accommodation)
+      redirect_to my_accommodations_accommodations_path
     else
       render :new
     end
