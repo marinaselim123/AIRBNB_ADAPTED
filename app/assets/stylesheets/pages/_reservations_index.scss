@@ -6,6 +6,13 @@
  font-size: 30px;
 }
 
+
+.all-reservations{
+
+  width: 90%;
+  margin: auto;
+}
+
 .reservation-card {
   overflow: hidden;
   height: 160px;
@@ -20,8 +27,14 @@
 }
 
 .reservation-card-infos{
+
   margin-right: 500px;
   margin-top: 30px;
+  height: 100%;
+  width: 60%;
+
+
+  margin-top: 130px;
 }
 
 .reservation-card img {
@@ -34,6 +47,13 @@
   font-weight: bold;
   margin-left: 42px;
   margin-top: -53px;
+  margin-top: -53px;
+  width: 100%;
+  padding-right: 112px;
+}
+
+.infos-dates{
+ width: 100%;
 }
 
 .reservation-card p {
@@ -51,7 +71,7 @@
 }
 
 #button-reservation {
-  margin-left: 120px;
+  margin-right: 50px;
 }
 
 .infos-dates{

@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
        # @reservation.user = current_user
        # @reservation.status = "pending"
        if @reservation.save
-         redirect_to root_path
+         redirect_to reservations_path
        else
          render :new
        end
