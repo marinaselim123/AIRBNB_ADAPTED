@@ -1,8 +1,9 @@
-.page-title{
+.page-title {
  margin-top: 20px;
  margin-left: 20px;
  color: #FF5A5F;
  margin-bottom: 70px;
+ font-size: 30px;
 }
 
 
@@ -26,6 +27,9 @@
 }
 
 .reservation-card-infos{
+
+  margin-right: 500px;
+  margin-top: 30px;
   height: 100%;
   width: 60%;
 
@@ -35,22 +39,21 @@
 
 .reservation-card img {
   height: 100%;
-
-
-
+  width: 20%;
 }
 
 .reservation-card h2 {
   font-size: 18px;
   font-weight: bold;
   margin-left: 42px;
-   margin-top: -53px;
-   width: 100%;
-   padding-right: 112px;
+  margin-top: -53px;
+  margin-top: -53px;
+  width: 100%;
+  padding-right: 112px;
 }
+
 .infos-dates{
  width: 100%;
-
 }
 
 .reservation-card p {
@@ -69,10 +72,8 @@
 
 #button-reservation {
   margin-right: 50px;
-
 }
 
 .infos-dates{
-
   margin-left: 45px;
 }
