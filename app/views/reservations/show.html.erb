@@ -12,6 +12,7 @@
    <p> Please find Your booking details below: </p>
    <h3 id ="reservation-type"><%= @reservation.accommodation.accommodation_type %></h3>
    <h6> <strong>Address: </strong> <%= @reservation.accommodation.address %></h6>
+   <h6> <strong>Status: </strong> <%= @reservation.status %></h6>
   <div class="details-reservation d-flex justify-content-around ">
 
 
@@ -44,7 +45,7 @@
     </div>
 </div>
      <div class="d-flex" id="footer-reservation">
-     <%= link_to 'Modify', new_reservation_path, class: "btn btn-red" %>
+     <%= link_to 'Modify',new_accommodation_reservation_path, class: "btn btn-red" %>
      <a class= "btn btn-red" href="https://www8.hp.com/fr/fr/home.html"> Print</a>
     </div>
 </div>
