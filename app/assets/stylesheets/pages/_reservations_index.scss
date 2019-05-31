@@ -6,7 +6,7 @@
 
 .reservation-card {
   overflow: hidden;
-  height: 128px;
+  height: 160px;
   width: 80%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -21,12 +21,14 @@
   height: 100%;
   width: 20%;
   margin-left: 0px;
+
 }
 
 .reservation-card h2 {
   font-size: 18px;
   font-weight: bold;
-  margin: 0;
+  margin-left: 42px;
+   margin-top: -53px;
 }
 
 .reservation-card p {
@@ -42,4 +44,30 @@
   float: right;
   margin-right: 20px;
 }
+
+#thumbnail {
+  display: block;
+
+
+}
+
+#thumbnail:hover + #title {
+  display: block;
+}
+
+#title {
+  display: none;
+background: rgba(0,0,0, 0.02);
+color: black;
+ height: 105px;
+  width: 78%;
+  align-items: center;
+  margin-left: 175px;
+  margin-top: 1px;
+
+  border-radius: 6px;
+  text-align: center;
+
+}
+
 

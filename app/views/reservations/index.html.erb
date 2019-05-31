@@ -4,24 +4,26 @@
 
 <% @reservations.each do |reservation| %>
 
-
-<div class="reservation-card d-flex justify-content-around">
+ <div class="reservation-card d-flex " id="thumbnail">
      <img  src="https://source.unsplash.com/user/erondu/1600x900">
 
       <div class="reservation-card-infos" >
         <h2><%= reservation.accommodation.accommodation_type %></h2>
-         <p><strong>Arrival Date & check-in-time:</strong> <br><%= reservation.arrival_date  %></p>
-        <p><strong>Arrival Date & check-out-time:</strong> <br><%= reservation.departure_date %></p>
+
 
          </div>
+         <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
 
-         <!--  <div class="but-menu">
-              <%= image_tag("dropdown.png") %>
+ </div>
 
-          </div> -->
-           <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
 
-      </div>
+<div id="title">
+
+   <p><strong>Arrival Date & check-in-time:</strong> <br><%= reservation.arrival_date  %></p>
+        <p><strong>Arrival Date & check-out-time:</strong> <br><%= reservation.departure_date %></p>
+
+</div>
+
 
 
 
@@ -30,5 +32,23 @@
 
 
 <%end%>
+
+
+ <!-- <div class="but-menu">
+              <%= image_tag("dropdown.png") %>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
