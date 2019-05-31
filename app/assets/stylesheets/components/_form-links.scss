@@ -1,0 +1,36 @@
+.link-login {
+  color: grey;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+.link-login:hover {
+  color: lightgrey;
+  text-decoration: underline;
+}
+
+.link-signup {
+  color: grey;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+
+.link-signup:hover {
+  color: lightgrey;
+  text-decoration: underline;
+}
+
+.link-password {
+  color: grey;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  padding-bottom: 8px;
+}
+
+.link-password:hover {
+  color: lightgrey;
+  text-decoration: underline;
+}
