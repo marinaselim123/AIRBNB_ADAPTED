@@ -1,9 +1,13 @@
-<h1>It is time to travel</h1>
-
-
-<%= simple_form_for [@accommodation, @reservation] do |f| %>
-<%= f.input :arrival_date %>
-<%= f.input :departure_date %>
-<%= f.input :guest_number %>
-<%= f.button :submit,  class: 'btn btn-primary' %>
-<% end %>
+<div class="image-new">
+  <div class = "container width-500">
+    <div class="form-new-accommodation">
+      <h1>It is time to travel</h1>
+      <%= simple_form_for [@accommodation, @reservation] do |f| %>
+      <%= f.input :arrival_date %>
+      <%= f.input :departure_date %>
+      <%= f.input :guest_number %>
+      <%= f.button :submit, "Create Reservation", class: "btn-red new-accommodation" %>
+      <% end %>
+    </div>
+  </div>
+</div>
