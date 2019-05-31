@@ -1,51 +1,18 @@
-
-<h3 class ="page-title"> <strong> Your upcoming Trips </strong></h3>
-
-
+<h3 class ="page-title-reservation"> <strong> Your upcoming Trips </strong></h3>
 <% @reservations.each do |reservation| %>
-
-
 <div class ="all-reservations">
-
- <div class="reservation-card d-flex" id="thumbnail">
-
-
-      <img  src="https://source.unsplash.com/user/erondu/1600x900">
-
-
-      <div class="reservation-card-infos" >
-        <h2><%= reservation.accommodation.accommodation_type %></h2>
-        <div class="infos-dates">
-         <p><strong>Arrival Date & check-in-time:</strong> <br><%= reservation.arrival_date  %></p>
-         <p><strong>Arrival Date & check-out-time:</strong> <br><%= reservation.departure_date %></p>
-       </div>
+  <div class="reservation-card d-flex" id="thumbnail">
+    <%= cl_image_tag (reservation.accommodation.photo), height: 180, width: 280, crop: :fill %>
+    <div class="reservation-card-infos" >
+      <h2><%= reservation.accommodation.accommodation_type %></h2>
+      <div class="infos-dates">
+        <p><strong>Arrival Date & check-in-time:</strong> <br><%= reservation.arrival_date  %></p>
+        <p><strong>Arrival Date & check-out-time:</strong> <br><%= reservation.departure_date %></p>
       </div>
-      <div id="button-reservation">
-         <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
-       </div>
-
- </div>
+    </div>
+    <div id="button-reservation">
+      <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
+    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
 <%end%>
-
-
-
-
-
-
-
-
-
-
-
-
-
