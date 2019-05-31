@@ -2,6 +2,7 @@
  margin-top: 20px;
  margin-left: 20px;
  color: #FF5A5F;
+ margin-bottom: 70px;
 }
 
 .reservation-card {
@@ -17,10 +18,16 @@
   border-radius: 6px;
 }
 
+.reservation-card-infos{
+
+  margin-right: 500px;
+  margin-top: 30px;
+}
+
 .reservation-card img {
   height: 100%;
   width: 20%;
-  margin-left: 0px;
+
 
 }
 
@@ -45,29 +52,11 @@
   margin-right: 20px;
 }
 
-#thumbnail {
-  display: block;
-
-
+#button-reservation {
+  margin-left: 120px;
 }
 
-#thumbnail:hover + #title {
-  display: block;
+.infos-dates{
+
+  margin-left: 45px;
 }
-
-#title {
-  display: none;
-background: rgba(0,0,0, 0.02);
-color: black;
- height: 105px;
-  width: 78%;
-  align-items: center;
-  margin-left: 175px;
-  margin-top: 1px;
-
-  border-radius: 6px;
-  text-align: center;
-
-}
-
-

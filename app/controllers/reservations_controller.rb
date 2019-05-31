@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
        @reservation.accommodation = @accommodation
 
 
-       @reservation.total_price =  (@reservation.departure_date - @reservation.arrival_date)* (@accommodation.price_per_night)
+       @reservation.total_price =  (@reservation.departure_date - @reservation.arrival_date)* (@accommodation.price_per_night)/86400
        # @reservation.user = current_user
        # @reservation.status = "pending"
        if @reservation.save
