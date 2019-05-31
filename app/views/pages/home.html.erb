@@ -15,6 +15,7 @@
   </div>
 </div>
 <div class="cards-container">
+  <h4><strong>Places you might like</strong></h4>
   <div class="card">
     <% @home_accommodations.each do |accommodation|  %>
     <div class="card-product">
@@ -22,7 +23,7 @@
       <div class="card-product-infos">
         <h2><%=  accommodation.accommodation_type %></h2>
         <p><strong><%= accommodation.price_per_night %></strong> $ per night.</p>
-        <%= link_to 'See More', accommodation_path(accommodation), class: "btn btn-red"%>
+        <%= link_to 'See More', accommodation_path(accommodation), class: "btn btn-red-see-more"%>
       </div>
     </div>
 
