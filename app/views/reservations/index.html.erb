@@ -10,8 +10,7 @@
         <p><strong>Arrival Date & check-out-time:</strong> <br><%= reservation.departure_date %></p>
       </div>
     </div>
-    <div id="button-reservation">
-      <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "btn btn-red" %>
+      <%= link_to 'VIEW', accommodation_reservation_path(reservation.accommodation_id, reservation.id), class: "red-button-new" %>
     </div>
   </div>
 </div>

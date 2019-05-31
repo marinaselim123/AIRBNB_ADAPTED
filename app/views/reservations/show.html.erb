@@ -2,11 +2,11 @@
   <div class ="reservation-banner">
     <h3>Your Booking is confirmed</h3>
     <div class ="icon-check" ><%= image_tag("check.png")%>  </div>
-    <img id ="background-reservation" src="https://source.unsplash.com/user/erondu/1600x900" >
+    <img id ="background-reservation" src="https://source.unsplash.com/1600x900?travel" >
 
   </div>
 
-   <p> Please find Your booking details below: </p>
+   <p> Please find your booking details below: </p>
    <h3 id ="reservation-type"><%= @reservation.accommodation.accommodation_type %></h3>
    <h6> <strong>Address: </strong> <%= @reservation.accommodation.address %></h6>
    <h6> <strong>Status: </strong> <%= @reservation.status %></h6>
@@ -36,7 +36,7 @@
 
     <div class="card_three">
       <h5> <strong>Total price</strong>  </h5>
-      <p><%= @reservation.total_price %></p>
+      <p><%= @reservation.total_price %>€</p>
 
 
     </div>
