@@ -21,7 +21,8 @@
           <%= image_tag "https://scontent.fcdg1-1.fna.fbcdn.net/v/t1.0-9/21752132_10214492834453738_3620176526648917973_n.jpg?_nc_cat=111&_nc_ht=scontent.fcdg1-1.fna&oh=96599b690d859caafc94fbd43ed2e4fc&oe=5D606D06", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Add an accommodation", new_accommodation_path, class: "dropdown-item" %>
-            <%= link_to "Check Accommodations", accommodations_path, class: "dropdown-item" %>
+            <%= link_to "My Accommodations", my_accommodations_accommodations_path, class: "dropdown-item" %>
+            <%= link_to "My upcoming trips", reservations_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
